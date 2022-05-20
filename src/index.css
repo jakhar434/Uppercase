@@ -1,0 +1,22 @@
+*{
+  margin:0;
+  padding:0;
+}
+#navbar-designation span {
+  font-size:30px;
+  color:red;
+}
+#navbar-designation{
+  font-size:25px;
+  color:green;
+  font-style: italic;
+  margin-right:50px;
+}
+.changedbottom{
+  color:rgb(20, 172, 48);
+}
+.footerchanged{
+  display: flex;
+  justify-content: center;
+  color:grey;
+}
