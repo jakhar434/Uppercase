@@ -45,11 +45,11 @@ export function Form(props){
                     <textarea style={{backgroundColor:props.mode==='dark'?'#dfebea':'white', color: props.mode==='dark'?'black':'black'}} value={text} className="form-control" id="mybox" onChange={handlechange} rows="9"></textarea>
                 </div>
                 <div className='container py-2' style={{color: props.mode==='dark'?'white':'black'}}>
-                   <button className="btn btn-primary mx-1 my-1" onClick={clicked}>Change To Uppercase</button>
-                   <button className="btn btn-primary mx-1 my-1" onClick={clickedlow}>Change To Lowercase</button>
-                   <button className="btn btn-primary mx-1 my-1" onClick={clickedspaces}>Remove Extra Spaces</button>
-                   <button className="btn btn-secondary my-1 mx-1" onClick={copyClicked}>Copy Text</button>
-                   <button className="btn btn-danger my-1 mx-1" onClick={clearClicked}>Clear Text</button>
+                   <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={clicked}>Change To Uppercase</button>
+                   <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={clickedlow}>Change To Lowercase</button>
+                   <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={clickedspaces}>Remove Extra Spaces</button>
+                   <button disabled={text.length===0} className="btn btn-secondary my-1 mx-1" onClick={copyClicked}>Copy Text</button>
+                   <button disabled={text.length===0} className="btn btn-danger my-1 mx-1" onClick={clearClicked}>Clear Text</button>
                    
                 </div>
         </div>
@@ -58,7 +58,7 @@ export function Form(props){
                 <ul>
                 
                     <li>You have written {text.length} Characters.</li>
-                    <li>You have written {text.split(" ").length>1?text.split(" ").length:"0"} words.</li>
+                    <li>You have written {text.split(" ").filter((element)=>{return(element.length!==0)}).length} words.</li>
                     <li>{0.008*text.split(" ").length-0.008} minutes to read.</li>
                 </ul>
             </div>
